@@ -1,0 +1,12 @@
+[package]
+name = "stock-teacher"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+fastnum = "0.7.4"
+handlebars = "6.3.2"
+persistent-scheduler = "0.5.3"
+rusqlite = "0.38.0"
+tokio = "1.48.0"
+warp = "0.4.2"

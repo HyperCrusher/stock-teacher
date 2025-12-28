@@ -1,0 +1,15 @@
+# Stock Teacher
+
+Stock Teacher is a small, simple web server that hosts a "game" for teaching people about stocks. 
+It is designed to replace a pen and paper exercise a friend of mine is doing with her children.
+The game is simply a stock-tracker that tracks a stock over time and gives the user a simulated
+experience of how well they did.
+
+# The game
+The game consists of a Game-Master setting up the players, the time period, stocks those players
+have and how much investment in each stock the player has. The game-master is then given a game 
+code and links for each player. The game master can use the game code to view a manager of the 
+game. Mostly for generating report-cards and checking on the results of all players while the 
+players are given links to a dashboard showing how well they are doing. The end up the game 
+culiminates with a theoretical cash-out giving a players a final score in the form of a increase
+or decrease in value.
