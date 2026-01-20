@@ -38,6 +38,7 @@ const TABLES: &[(&str, &str)] = &[
             player_id BLOB,
             game_id BLOB,
             active BOOLEAN,
+            PRIMARY KEY (player_id, game_id),
             FOREIGN KEY(player_id) REFERENCES players(id),
             FOREIGN KEY(game_id) REFERENCES games(id)
         );
@@ -116,7 +117,7 @@ const TABLES: &[(&str, &str)] = &[
         ",
     ),
     (
-        "reports",
+        "report_cards",
         "
         CREATE TABLE IF NOT EXISTS report_cards (
             player_id BLOB,
