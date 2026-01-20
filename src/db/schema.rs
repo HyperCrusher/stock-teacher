@@ -15,7 +15,7 @@ const TABLES: &[(&str, &str)] = &[
         "players",
         "
         CREATE TABLE IF NOT EXISTS players (
-            id TEXT PRIMARY KEY,
+            id BLOB PRIMARY KEY,
             name TEXT NOT NULL
         );
         ",
@@ -24,8 +24,8 @@ const TABLES: &[(&str, &str)] = &[
         "games",
         "
         CREATE TABLE IF NOT EXISTS games (
-            id TEXT PRIMARY KEY,
-            gm TEXT,
+            id BLOB PRIMARY KEY,
+            gm BLOB,
             password TEXT,
             FOREIGN KEY(gm) REFERENCES players(id)
         );
@@ -35,8 +35,8 @@ const TABLES: &[(&str, &str)] = &[
         "game_rosters",
         "
         CREATE TABLE IF NOT EXISTS game_rosters (
-            player_id TEXT,
-            game_id TEXT,
+            player_id BLOB,
+            game_id BLOB,
             active BOOLEAN,
             FOREIGN KEY(player_id) REFERENCES players(id),
             FOREIGN KEY(game_id) REFERENCES games(id)
@@ -47,7 +47,7 @@ const TABLES: &[(&str, &str)] = &[
         "stocks",
         "
         CREATE TABLE IF NOT EXISTS stocks (
-            id TEXT PRIMARY KEY,
+            id BLOB PRIMARY KEY,
             ticker TEXT NOT NULL,
             name TEXT
         );
@@ -57,9 +57,9 @@ const TABLES: &[(&str, &str)] = &[
         "portfolios",
         "
         CREATE TABLE IF NOT EXISTS portfolios (
-            player_id TEXT,
-            stock_id TEXT,
-            game_id TEXT,
+            player_id BLOB,
+            stock_id BLOB,
+            game_id BLOB,
             invest_amount TEXT,
             shares TEXT,
             PRIMARY KEY (player_id, stock_id, game_id),
@@ -73,9 +73,9 @@ const TABLES: &[(&str, &str)] = &[
         "records",
         r#"
         CREATE TABLE IF NOT EXISTS records (
-            id TEXT PRIMARY KEY,
-            stock_id TEXT,
-            "date" DATE,
+            id BLOB PRIMARY KEY,
+            stock_id BLOB,
+            date TEXT,
             open TEXT,
             close TEXT,
             FOREIGN KEY(stock_id) REFERENCES stocks(id)
@@ -86,10 +86,10 @@ const TABLES: &[(&str, &str)] = &[
         "months",
         "
         CREATE TABLE IF NOT EXISTS months (
-            id TEXT PRIMARY KEY,
-            start DATE,
-            end DATE,
-            stock_id TEXT,
+            id BLOB PRIMARY KEY,
+            start TEXT,
+            end TEXT,
+            stock_id BLOB,
             open TEXT,
             close TEXT,
             FOREIGN KEY(stock_id) REFERENCES stocks(id)
@@ -100,10 +100,10 @@ const TABLES: &[(&str, &str)] = &[
         "weeks",
         "
         CREATE TABLE IF NOT EXISTS weeks (
-            id TEXT PRIMARY KEY,
-            stock_id TEXT,
-            month_id TEXT,
-            date DATE,
+            id BLOB PRIMARY KEY,
+            stock_id BLOB,
+            month_id BLOB,
+            date TEXT,
             week_num INTEGER,
             peak TEXT,
             daysUp INTEGER,
@@ -119,9 +119,9 @@ const TABLES: &[(&str, &str)] = &[
         "reports",
         "
         CREATE TABLE IF NOT EXISTS report_cards (
-            player_id TEXT,
-            stock_id TEXT,
-            week_id TEXT,
+            player_id BLOB,
+            stock_id BLOB,
+            week_id BLOB,
             open TEXT,
             close TEXT,
             cached TEXT,
