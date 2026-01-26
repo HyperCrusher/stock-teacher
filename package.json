@@ -1,0 +1,14 @@
+{
+  "name": "stock-teacher",
+  "private": true,
+  "scripts": {
+    "install": "pnpm install && cargo fetch",
+    "run:client": "pnpm --filter client dev",
+    "run:server": "cargo run -p server",
+    "build:frontend": "pnpm --filter client build",
+    "build:backend": "cargo build --release -p server",
+    "build:release": "pnpm build:frontend && pnpm build:backend"
+  },
+  "author": "Timothy Cates",
+  "packageManager": "pnpm@10.28.0"
+}
