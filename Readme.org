@@ -1,17 +1,36 @@
 * *Stock Teacher*
 
-Stock Teacher is a small, simple web server that hosts a "game" for teaching people about stocks. 
-It is designed to replace a pen and paper exercise a friend of mine is doing with her children.
-The game is simply a stock-tracker that tracks a stock over time and gives the user a simulated
-experience of how well they did.
+Stock Teacher is a web application designed to make learning about the stock market accessible and fun for kids.
+It replaces abstract concepts with a hands-on game, allowing parents and educators to teach financial literacy using real-world stock data.
 
-** The game
+** How It Works
+The game is structured around a simple, interactive experience for both the game organizer and the players.
 
-The game consists of a Game-Master setting up the players, the time period, stocks those players
-have and how much investment in each stock the player has. The game-master is then given a game
-code and links for each player. The game master can use the game code to view a manager of the
-game. Mostly for generating report-cards and checking on the results of all players while the
-players are given links to a dashboard showing how well they are doing. The end up the game 
-or decrease in value. culiminates with a theoretical cash-out giving a players a final score in the form of a increase
+*** 1. Game Setup
+
+A parent or educator acts as the "Game Master" and sets up a new game:
+- **Define Players:** Add one or more players (e.g., their children or students).
+- **Set a Timeframe:** Choose how long the game will run (e.g., 4 weeks, 90 days).
+- **Pick Stocks:** For each player, select initial stocks and define a starting virtual investment amount.
+
+Once the game is created, the Game Master receives a management link and unique links for each player.
+
+*** 2. Player Experience
+
+Players use their unique links to access a personal dashboard where they can:
+- Track their virtual portfolio's value in near real-time.
+- See how their individual stock picks are performing.
+- Get a clear, visual representation of their gains or losses over time.
+
+*** 3. Automated Report Cards
+
+To foster ongoing learning and engagement, Stock Teacher automatically generates report cards:
+- **Weekly Updates:** At the end of each week, players receive a report card summarizing their portfolio's performance, highlighting what went up or down and why.
+- **Final Results:** At the conclusion of the game, a final report card is issued, showing the total increase or decrease in value and providing a complete summary of their investment journey.
+
+** Technology Stack
+
+- **Backend:** A custom, lightweight web server built with **Rust** using the **Warp** framework and a **SQLite** database.
+- **Frontend:** A multi-page application built with **SolidJS**.
 
 *** TODO Features
