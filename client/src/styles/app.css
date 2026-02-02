@@ -1,0 +1,12 @@
+@import "./modern-normalize.css";
+:root {
+    --bg-light: #f2f0ef;
+    --bg-dark: #1d1e2c;
+    --border-dark: #1d1e2cbf;
+    --teal: #2fc6b7;
+    --orange: #f29e4c;
+}
+
+body {
+    background-color: var(--bg-dark);
+}

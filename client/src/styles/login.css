@@ -1,0 +1,97 @@
+.container {
+    margin: auto;
+    place-items: center;
+    align-content: center;
+    max-width: 80%;
+    height: 100vh;
+    display: grid;
+}
+
+.card {
+    display: grid;
+    gap: 2rem;
+    background-color: var(--bg-light);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+img {
+    height: 18rem;
+    justify-self: end;
+}
+
+.logo-text {
+    justify-self: start;
+    display: grid;
+    grid: /1fr;
+    align-content: center;
+    user-select: none;
+
+    h1 {
+        font-size: 88px;
+        line-height: 1.16;
+        text-shadow:
+            -1px -1px 2px var(--border-dark),
+            1px -1px 2px var(--border-dark),
+            -1px 1px 2px var(--border-dark),
+            1px 1px 2px var(--border-dark);
+    }
+
+    :nth-child(1) {
+        color: var(--teal);
+    }
+
+    :nth-child(2) {
+        color: var(--orange);
+    }
+}
+
+form {
+    grid-column: span 2;
+    display: grid;
+    grid: auto / 1fr 1fr;
+    gap: 1rem;
+
+    input {
+        grid-column: span 2;
+        padding: 0.4rem;
+        font-size: 23px;
+        color: var(--bg-dark);
+        border: none;
+        box-shadow: 0 0 0 1px var(--bg-dark);
+        border-radius: 3px;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px
+                color-mix(in srgb, var(--teal), var(--bg-dark) 20%);
+        }
+    }
+
+    button {
+        --color: var(--teal);
+
+        background-color: var(--color);
+        box-shadow: 0 0 0 1px var(--border-dark);
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: color-mix(in srgb, var(--bg-dark), var(--bg-light) 10%);
+
+        &:nth-of-type(2) {
+            --color: var(--orange);
+        }
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 0 2px var(--border-dark);
+            background-color: color-mix(
+                in srgb,
+                var(--color),
+                var(--bg-light) 10%
+            );
+        }
+    }
+}

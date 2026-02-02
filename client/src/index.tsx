@@ -1,8 +1,8 @@
 /* @refresh reload */
-import { render } from 'solid-js/web'
-import './index.css'
-import App from './App.tsx'
+import { render } from "solid-js/web";
+import "./styles/app.css";
+import Login from "./pages/login.tsx";
 
-const root = document.getElementById('root')
+const root = document.getElementById("root");
 
-render(() => <App />, root!)
+render(() => <Login />, root!);
